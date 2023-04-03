@@ -1,0 +1,33 @@
+{
+    "name": "mathai",
+    "short_name": "mathai",
+    "description": "Resuelve problemas matemáticos con inteligencia artificial. Ingresa tu problema matemático y recibe una solución detallada.",
+    "author": "Jeremy Díaz",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jevmydev/mathai.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jevmydev/mathai/issues"
+    },
+    "icons": [
+        {
+            "src": "/favicon.webp",
+            "sizes": "200x200",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#fae8ff",
+    "background_color": "#050505",
+    "id": "/index.html",
+    "start_url": "/index.html",
+    "homepage": "https://mathai.vercel.app/"
+}

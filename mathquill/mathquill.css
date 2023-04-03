@@ -1,0 +1,460 @@
+@font-face {
+    font-family: "Times new roman";
+    src: url("./times-new-roman.ttf") format("truetype");
+}
+
+:root {
+    --border-color: #d946ef;
+    --main-color: #fae8ff;
+    --main-font: "Times new roman", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.mq-editable-field {
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    width: 100%;
+    background-color: #171717;
+}
+
+.mq-cursor {
+    left: 4px;
+}
+
+.mq-editable-field,
+.mq-cursor {
+    display: inline-block;
+}
+
+.mq-editable-field .mq-cursor {
+    position: relative;
+    border-left: 1px solid var(--border-color);
+    margin-left: -1px;
+}
+
+.mq-editable-field .mq-cursor.mq-blink {
+    visibility: hidden;
+}
+
+.mq-editable-field,
+.mq-math-mode .mq-editable-field,
+.mq-editable-field .mq-latex-command-input {
+    border: 1px solid #404040;
+    transition: border-color 150ms;
+}
+
+.mq-editable-field.mq-focused,
+.mq-math-mode .mq-editable-field.mq-focused {
+    border-color: var(--border-color);
+}
+
+.mq-math-mode .mq-editable-field {
+    margin: 1px;
+}
+
+.mq-editable-field .mq-latex-command-input {
+    font-family: var(--main-font);
+    color: var(--main-color);
+    padding-right: 1px;
+    margin-right: 1px;
+    margin-left: 2px;
+}
+
+.mq-editable-field .mq-latex-command-input.mq-empty {
+    background: transparent;
+}
+
+.mq-editable-field .mq-latex-command-input.mq-hasCursor {
+    border-color: ActiveBorder;
+}
+
+.mq-editable-field.mq-empty:after,
+.mq-editable-field.mq-text-mode:after,
+.mq-math-mode .mq-empty:after,
+.mq-editable-field .mq-cursor:only-child:after,
+.mq-editable-field .mq-textarea + .mq-cursor:last-child:after {
+    visibility: hidden;
+    content: "c";
+}
+
+.mq-editable-field .mq-text-mode .mq-cursor:only-child:after {
+    content: "";
+}
+
+.mq-editable-field.mq-text-mode {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.mq-root-block,
+.mq-math-mode .mq-root-block {
+    display: inline-block;
+    width: 100%;
+    padding: 2px;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.mq-math-mode {
+    font-variant: normal;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 115%;
+    line-height: 1;
+    display: inline-block;
+}
+
+.mq-math-mode .mq-non-leaf,
+.mq-math-mode .mq-scaled {
+    display: inline-block;
+}
+
+.mq-math-mode var,
+.mq-math-mode .mq-text-mode,
+.mq-math-mode .mq-nonSymbola {
+    font-family: var(--main-font);
+    line-height: 0.9;
+}
+
+.mq-math-mode * {
+    font-size: inherit;
+    line-height: inherit;
+    border-color: var(--border-color);
+    user-select: none;
+}
+
+.mq-math-mode .mq-empty {
+    background: var(--main-color);
+}
+
+.mq-math-mode .mq-empty.mq-root-block,
+.mq-math-mode.mq-empty {
+    background: transparent;
+}
+
+.mq-math-mode .mq-text-mode {
+    font-size: 87%;
+}
+
+.mq-math-mode .mq-font {
+    font-family: var(--main-font);
+    font-size: 1em;
+}
+
+.mq-math-mode .mq-font * {
+    font-family: inherit;
+    font-style: inherit;
+}
+
+.mq-math-mode b,
+.mq-math-mode b.mq-font {
+    font-weight: bolder;
+}
+
+.mq-math-mode var,
+.mq-math-mode i,
+.mq-math-mode i.mq-font {
+    font-style: italic;
+}
+
+.mq-math-mode var.mq-f {
+    margin-right: 0.2em;
+    margin-left: 0.1em;
+}
+
+.mq-math-mode .mq-roman var.mq-f {
+    margin: 0;
+}
+
+.mq-math-mode big {
+    font-size: 125%;
+}
+
+.mq-math-mode .mq-roman {
+    font-style: normal;
+}
+
+.mq-math-mode .mq-sans-serif {
+    font-family: sans-serif, var(--main-font);
+}
+
+.mq-math-mode .mq-monospace {
+    font-family: monospace, var(--main-font);
+}
+
+.mq-math-mode .mq-overline {
+    border-top: 1px solid var(--border-color);
+    margin-top: 1px;
+}
+
+.mq-math-mode .mq-underline {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1px;
+}
+
+.mq-math-mode .mq-binary-operator {
+    display: inline-block;
+    padding: 0 0.2em;
+}
+
+.mq-math-mode .mq-supsub {
+    font-size: 90%;
+    vertical-align: -0.5em;
+}
+
+.mq-math-mode .mq-supsub.mq-limit {
+    font-size: 80%;
+    vertical-align: -0.4em;
+}
+
+.mq-math-mode .mq-supsub.mq-sup-only {
+    vertical-align: 0.5em;
+}
+
+.mq-math-mode .mq-supsub.mq-sup-only .mq-sup {
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+
+.mq-math-mode .mq-supsub .mq-sup {
+    display: block;
+}
+
+.mq-math-mode .mq-supsub .mq-sub {
+    display: block;
+    float: left;
+}
+
+.mq-math-mode .mq-supsub.mq-limit .mq-sub {
+    margin-left: -0.25em;
+}
+
+.mq-math-mode .mq-supsub .mq-binary-operator {
+    padding: 0 0.1em;
+}
+
+.mq-math-mode .mq-supsub .mq-fraction {
+    font-size: 70%;
+}
+
+.mq-math-mode sup.mq-nthroot {
+    font-size: 80%;
+    vertical-align: 0.8em;
+    margin-right: -0.6em;
+    margin-left: 0.2em;
+    min-width: 0.5em;
+}
+
+.mq-math-mode .mq-paren {
+    padding: 0 0.1em;
+    vertical-align: top;
+    transform-origin: center 0.06em;
+}
+
+.mq-math-mode .mq-paren.mq-ghost {
+    color: var(--main-color);
+}
+
+.mq-math-mode .mq-paren + span {
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+}
+
+.mq-math-mode .mq-array {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.mq-math-mode .mq-array > span {
+    display: block;
+}
+
+.mq-math-mode .mq-operator-name {
+    font-family: var(--main-font);
+    font-style: normal;
+    line-height: 0.9;
+}
+
+.mq-math-mode var.mq-operator-name.mq-first {
+    padding-left: 0.2em;
+}
+
+.mq-math-mode var.mq-operator-name.mq-last {
+    padding-right: 0.2em;
+}
+
+.mq-math-mode .mq-fraction {
+    font-size: 90%;
+    text-align: center;
+    vertical-align: -0.4em;
+    padding: 0 0.2em;
+}
+
+.mq-math-mode .mq-fraction,
+.mq-math-mode .mq-large-operator,
+.mq-math-mode x:-moz-any-link {
+    display: -moz-groupbox;
+}
+
+.mq-math-mode .mq-fraction,
+.mq-math-mode .mq-large-operator,
+.mq-math-mode x:-moz-any-link,
+.mq-math-mode x:default {
+    display: inline-block;
+}
+
+.mq-math-mode .mq-numerator,
+.mq-math-mode .mq-denominator {
+    display: block;
+}
+
+.mq-math-mode .mq-numerator {
+    padding: 0 0.1em;
+}
+
+.mq-math-mode .mq-denominator {
+    border-top: 1px solid var(--main-color);
+    float: right;
+    width: 100%;
+    padding: 0.1em;
+}
+
+.mq-math-mode .mq-sqrt-prefix {
+    padding-top: 0;
+    position: relative;
+    top: 0.1em;
+    vertical-align: top;
+    transform-origin: top;
+}
+
+.mq-math-mode .mq-sqrt-stem {
+    border-top: 1px solid var(--main-color);
+    margin-top: 1px;
+    padding-left: 0.15em;
+    padding-right: 0.2em;
+    margin-right: 0.1em;
+    padding-top: 1px;
+}
+
+.mq-math-mode .mq-vector-prefix {
+    display: block;
+    text-align: center;
+    line-height: 0.25em;
+    margin-bottom: -0.1em;
+    font-size: 0.75em;
+}
+
+.mq-math-mode .mq-vector-stem {
+    display: block;
+}
+
+.mq-math-mode .mq-large-operator {
+    text-align: center;
+}
+
+.mq-math-mode .mq-large-operator .mq-from,
+.mq-math-mode .mq-large-operator big,
+.mq-math-mode .mq-large-operator .mq-to {
+    display: block;
+}
+
+.mq-math-mode .mq-large-operator .mq-from,
+.mq-math-mode .mq-large-operator .mq-to {
+    font-size: 80%;
+}
+
+.mq-math-mode .mq-large-operator .mq-from {
+    float: right;
+    width: 100%;
+}
+
+.mq-math-mode,
+.mq-math-mode .mq-editable-field {
+    font-family: var(--main-font);
+    cursor: text;
+}
+
+.mq-math-mode .mq-overarrow {
+    border-top: 1px solid var(--border-color);
+    margin-top: 1px;
+    padding-top: 0.2em;
+}
+
+.mq-math-mode .mq-overarrow:before {
+    display: block;
+    position: relative;
+    top: -0.34em;
+    font-size: 0.5em;
+    line-height: 0em;
+    content: "\27A4";
+    text-align: right;
+}
+
+.mq-math-mode .mq-overarrow.mq-arrow-left:before {
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+.mq-math-mode .mq-selection,
+.mq-editable-field .mq-selection,
+.mq-math-mode .mq-selection .mq-non-leaf,
+.mq-editable-field .mq-selection .mq-non-leaf,
+.mq-math-mode .mq-selection .mq-scaled,
+.mq-editable-field .mq-selection .mq-scaled {
+    background: var(--border-color);
+}
+
+.mq-math-mode .mq-selection .mq-matrixed,
+.mq-editable-field .mq-selection .mq-matrixed {
+    background: var(--border-color);
+}
+
+.mq-math-mode .mq-selection .mq-matrixed-container,
+.mq-editable-field .mq-selection .mq-matrixed-container {
+    filter: progid:DXImageTransform.Microsoft.Chroma(color=var(--main-color));
+}
+
+.mq-math-mode .mq-selection.mq-blur,
+.mq-editable-field .mq-selection.mq-blur,
+.mq-math-mode .mq-selection.mq-blur .mq-non-leaf,
+.mq-editable-field .mq-selection.mq-blur .mq-non-leaf,
+.mq-math-mode .mq-selection.mq-blur .mq-scaled,
+.mq-editable-field .mq-selection.mq-blur .mq-scaled,
+.mq-math-mode .mq-selection.mq-blur .mq-matrixed,
+.mq-editable-field .mq-selection.mq-blur .mq-matrixed {
+    background: #d4d4d4;
+    color: var(--main-color);
+    border-color: var(--border-color);
+}
+
+.mq-math-mode .mq-selection.mq-blur .mq-matrixed-container,
+.mq-editable-field .mq-selection.mq-blur .mq-matrixed-container {
+    filter: progid:DXImageTransform.Microsoft.Chroma(color=var(--main-color));
+}
+
+.mq-editable-field .mq-textarea,
+.mq-math-mode .mq-textarea {
+    position: relative;
+    user-select: text;
+}
+
+.mq-editable-field .mq-textarea *,
+.mq-math-mode .mq-textarea *,
+.mq-editable-field .mq-selectable,
+.mq-math-mode .mq-selectable {
+    user-select: text;
+    position: absolute;
+    transform: scale(0);
+    resize: none;
+    width: 1px;
+    height: 1px;
+}
+
+.mq-math-mode .mq-matrixed {
+    display: inline-block;
+    background: var(--main-color);
+}
+
+.mq-math-mode .mq-matrixed-container {
+    margin-top: -0.1em;
+}
