@@ -1,4 +1,4 @@
-import { useResolveIA } from "../hooks/useResolveIA";
+import { useResolveAI } from "../hooks/useResolveAI";
 import { useLatex } from "../hooks/useLatex";
 
 import PlayGround from "./PlayGround";
@@ -8,7 +8,7 @@ import Loading from "../elements/Loading";
 import Error from "../elements/Error";
 
 const Hero = () => {
-    const { resolve, error, loading, updateResolve } = useResolveIA();
+    const { resolve, error, loading, updateResolve } = useResolveAI();
     const { latex } = useLatex();
 
     const resolveAI = () => updateResolve(latex);

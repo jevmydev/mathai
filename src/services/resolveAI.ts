@@ -1,4 +1,4 @@
-import { type ResolveIA, type ResolveMessage, type QueryLatex } from "../types";
+import { type ResolveAI, type ResolveMessage, type QueryLatex } from "../types";
 import { HELPER_MESSAGES, OPENAI_URL } from "../constants";
 
 export const OPENAI_OPTIONS = (query: QueryLatex) => ({
@@ -15,7 +15,7 @@ export const OPENAI_OPTIONS = (query: QueryLatex) => ({
     })
 });
 
-export const contractResolveIA = (resolve: ResolveIA): ResolveMessage => {
+export const contractResolveAI = (resolve: ResolveAI): ResolveMessage => {
     const choices = resolve?.choices;
     const firstChoice = choices?.at(0);
     const message = firstChoice?.message;
@@ -27,8 +27,8 @@ export const contractResolveIA = (resolve: ResolveIA): ResolveMessage => {
 
 export const resolveAI = async (query: QueryLatex): Promise<ResolveMessage> => {
     const res = await fetch(OPENAI_URL, OPENAI_OPTIONS(query));
-    const resolve: ResolveIA = await res.json();
+    const resolve: ResolveAI = await res.json();
 
-    const contractResolve = contractResolveIA(resolve);
+    const contractResolve = contractResolveAI(resolve);
     return contractResolve;
 };

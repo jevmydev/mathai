@@ -14,6 +14,6 @@ export interface ResolveChoices {
     message: ResolveMessage;
 }
 
-export interface ResolveIA {
+export interface ResolveAI {
     choices: Array<ResolveChoices>;
 }

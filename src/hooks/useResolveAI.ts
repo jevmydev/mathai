@@ -2,7 +2,7 @@ import { type QueryLatex, type ResolveMessage } from "../types";
 import { useState } from "react";
 import { resolveAI } from "../services/resolveAI";
 
-export const useResolveIA = () => {
+export const useResolveAI = () => {
     const [resolve, setResolve] = useState<ResolveMessage | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -14,8 +14,8 @@ export const useResolveIA = () => {
             const newResolve = await resolveAI(query);
             setResolve(newResolve);
         } catch (err) {
-            setError(`Fetch resolve IA: ${err}`);
-            throw new Error(`Fetch resolve IA: ${err}`);
+            setError(`Fetch resolve AI: ${err}`);
+            throw new Error(`Fetch resolve AI: ${err}`);
         } finally {
             setLoading(false);
         }
