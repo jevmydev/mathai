@@ -10,6 +10,7 @@ export const useResolveIA = () => {
     const updateResolve = async (query: QueryLatex) => {
         try {
             setLoading(true);
+
             const newResolve = await resolveAI(query);
             setResolve(newResolve);
         } catch (err) {

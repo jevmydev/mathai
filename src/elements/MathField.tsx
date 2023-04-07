@@ -3,6 +3,7 @@ import { useLatex } from "../hooks/useLatex";
 
 const MathField = () => {
     const { latex, updateLatex } = useLatex();
+
     const handleChange = (mathField: MathField) => updateLatex(mathField.latex());
 
     return (
