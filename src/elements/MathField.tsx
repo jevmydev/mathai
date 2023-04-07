@@ -1,10 +1,9 @@
-import { useState } from "react";
 import { EditableMathField, type MathField } from "react-mathquill";
+import { useLatex } from "../hooks/useLatex";
 
 const MathField = () => {
-    const [latex, setLatex] = useState<string>("");
-
-    const handleChange = (mathField: MathField) => setLatex(mathField.latex());
+    const { latex, updateLatex } = useLatex();
+    const handleChange = (mathField: MathField) => updateLatex(mathField.latex());
 
     return (
         <div className="flex-1 relative overflow-hidden flex items-center justify-start">
