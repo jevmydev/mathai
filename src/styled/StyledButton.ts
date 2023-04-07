@@ -6,11 +6,15 @@ export const StyledButton = styled.button`
     background: #171717;
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
-    transition: background 150ms;
+    transition: background 150ms, transform 150ms;
     border: 1px solid #404040;
 
     &:hover {
         background: #262626;
+    }
+
+    &:active {
+        transform: scale(0.97);
     }
 `;
 
