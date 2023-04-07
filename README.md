@@ -28,7 +28,7 @@ Resuelve **problemas matemáticos** con **inteligencia artificial**. Ingresa tu 
 
 También dispones de:
 
--   `npm run build`: Empaquetar los módulos y construir un distribuible.
--   `npm run preview`: Despliege de un entorno de preview del distribuible.
--   `npm run lint`: Ejecutar eslint y arreglar los errores en el código.
--   `npm run format`: Ejecutar prettier y formatear el código.
+-   `pnpm run build`: Empaquetar los módulos y construir un distribuible.
+-   `pnpm run preview`: Despliege de un entorno de preview del distribuible.
+-   `pnpm run lint`: Ejecutar eslint y arreglar los errores en el código.
+-   `pnpm run format`: Ejecutar prettier y formatear el código.
