@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { type QueryLatex, type ResolveMessage } from "../types";
+import { useState } from "react";
 import { resolveAI } from "../services/resolveAI";
 
 export const useResolveIA = () => {

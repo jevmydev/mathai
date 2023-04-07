@@ -1,5 +1,5 @@
-import { HELPER_MESSAGES, OPENAI_URL } from "../constants";
 import { type ResolveIA, type ResolveMessage, type QueryLatex } from "../types";
+import { HELPER_MESSAGES, OPENAI_URL } from "../constants";
 
 export const OPENAI_OPTIONS = (query: QueryLatex) => ({
     method: "POST",

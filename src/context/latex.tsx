@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
 import { type QueryLatex, type LatexType } from "../types";
+import { createContext, useState } from "react";
 
 export const LatexContext = createContext<LatexType | null>(null);
 

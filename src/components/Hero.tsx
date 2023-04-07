@@ -1,9 +1,9 @@
 import { useResolveIA } from "../hooks/useResolveIA";
 import { useLatex } from "../hooks/useLatex";
-import StyledCenter from "../styled/StyledCenter";
 
 import PlayGround from "./PlayGround";
 import FormMath from "./FormMath";
+import StyledCenter from "../styled/StyledCenter";
 import Loading from "../elements/Loading";
 import Error from "../elements/Error";
 
